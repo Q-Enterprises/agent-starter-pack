@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   LayoutDashboard,
@@ -9,16 +9,20 @@ import {
   Server,
   FileText,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Gauge,
+  ShieldCheck
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { label: "Dashboard", icon: LayoutDashboard, path: "/" },
   { label: "Token Capsules", icon: Key, path: "/capsules" },
+  { label: "Policy Simulator", icon: Gauge, path: "/simulator" },
   { label: "Avatar Blueprints", icon: Users, path: "/avatars" },
   { label: "Dataset Builder", icon: Database, path: "/datasets" },
   { label: "LoRA Jobs", icon: Cpu, path: "/lora-jobs" },
+  { label: "Receipt Debugger", icon: ShieldCheck, path: "/debugger" },
   { label: "MCP Settings", icon: Server, path: "/mcp-settings" },
   { label: "Audit Log", icon: FileText, path: "/audit-log" },
 ];
