@@ -178,15 +178,15 @@ def _build_skill_markdown(source_dir: pathlib.Path) -> str:
         "Run focused CLI or unit tests before committing.",
     ]
 
-    key_files: list[str] = []
-    if (source_dir / "pyproject.toml").exists():
-        key_files.append("pyproject.toml")
-    if (source_dir / ".asp.toml").exists():
-        key_files.append(".asp.toml")
-    if (source_dir / ".template" / "templateconfig.yaml").exists():
-        key_files.append(".template/templateconfig.yaml")
-    if (source_dir / "GEMINI.md").exists():
-        key_files.append("GEMINI.md")
+    potential_key_files = [
+        "pyproject.toml",
+        ".asp.toml",
+        ".template/templateconfig.yaml",
+        "GEMINI.md",
+    ]
+    key_files: list[str] = [
+        f for f in potential_key_files if (source_dir / f).exists()
+    ]
     key_files.append(f"{agent_directory}/")
 
     key_files.extend(gemini_metadata["key_files"])
