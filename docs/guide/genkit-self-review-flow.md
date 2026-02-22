@@ -53,7 +53,7 @@ export const agentFlow = defineFlow(
       const review = await model.generate({
         prompt: [
           `Review the deployment/update of ${targetPath}.`,
-          'Confirm the code addresses previous failure patterns found in firestore_export logs.',
+          'Confirm the code addresses the requested changes and follows project standards.',
           'Return a concise risk summary and any required follow-up actions.',
         ].join(' '),
       });
