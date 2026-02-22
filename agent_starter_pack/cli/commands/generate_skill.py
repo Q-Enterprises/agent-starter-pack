@@ -20,12 +20,12 @@ import sys
 from typing import Any
 
 import click
+try:
+    import yaml
+except ModuleNotFoundError:  # pragma: no cover - optional dependency fallback
+    yaml = None
 
-from .project_discovery import (
-    detect_agent_directory,
-    detect_language,
-    get_asp_config_for_language,
-)
+from .extract import detect_agent_directory, detect_language, get_asp_config_for_language
 
 if sys.version_info >= (3, 11):
     import tomllib
@@ -46,34 +46,18 @@ def _load_toml(path: pathlib.Path) -> dict[str, Any]:
     return data if isinstance(data, dict) else {}
 
 
-def _parse_simple_yaml_map(raw: str) -> dict[str, Any]:
-    """Parse simple top-level `key: value` YAML mappings as a fallback."""
-    parsed: dict[str, Any] = {}
-    for line in raw.splitlines():
-        stripped = line.strip()
-        if not stripped or stripped.startswith("#") or ":" not in stripped:
-            continue
-        if line[:1].isspace():
-            continue
-        key, value = stripped.split(":", 1)
-        parsed[key.strip()] = value.strip().strip("\"'")
-    return parsed
-
-
 def _load_template_config(source_dir: pathlib.Path) -> dict[str, Any]:
     config_path = source_dir / ".template" / "templateconfig.yaml"
     if not config_path.exists():
         return {}
 
-    raw = config_path.read_text(encoding="utf-8")
+    if yaml is None:
+        return {}
 
-    try:
-        import yaml
+    with open(config_path, encoding="utf-8") as f:
+        data = yaml.safe_load(f)
 
-        data = yaml.safe_load(raw)
-        return data if isinstance(data, dict) else {}
-    except ModuleNotFoundError:
-        return _parse_simple_yaml_map(raw)
+    return data if isinstance(data, dict) else {}
 
 
 def _read_gemini_metadata(source_dir: pathlib.Path) -> dict[str, list[str]]:
@@ -97,16 +81,10 @@ def _read_gemini_metadata(source_dir: pathlib.Path) -> dict[str, list[str]]:
         if not line.startswith(("-", "*")):
             continue
 
-        if any(
-            token in line.lower() for token in ("trigger", "when user", "user asks")
-        ):
-            trigger_phrases.extend(
-                match.strip() for match in trigger_pattern.findall(line)
-            )
+        if any(token in line.lower() for token in ("trigger", "when user", "user asks")):
+            trigger_phrases.extend(match.strip() for match in trigger_pattern.findall(line))
 
-        if any(
-            token in line.lower() for token in ("workflow", "step", "then", "first")
-        ):
+        if any(token in line.lower() for token in ("workflow", "step", "then", "first")):
             cleaned = re.sub(r"^[*-]\s*", "", line)
             workflow_steps.append(cleaned)
 
@@ -178,15 +156,15 @@ def _build_skill_markdown(source_dir: pathlib.Path) -> str:
         "Run focused CLI or unit tests before committing.",
     ]
 
-    potential_key_files = [
-        "pyproject.toml",
-        ".asp.toml",
-        ".template/templateconfig.yaml",
-        "GEMINI.md",
-    ]
-    key_files: list[str] = [
-        f for f in potential_key_files if (source_dir / f).exists()
-    ]
+    key_files: list[str] = []
+    if (source_dir / "pyproject.toml").exists():
+        key_files.append("pyproject.toml")
+    if (source_dir / ".asp.toml").exists():
+        key_files.append(".asp.toml")
+    if (source_dir / ".template" / "templateconfig.yaml").exists():
+        key_files.append(".template/templateconfig.yaml")
+    if (source_dir / "GEMINI.md").exists():
+        key_files.append("GEMINI.md")
     key_files.append(f"{agent_directory}/")
 
     key_files.extend(gemini_metadata["key_files"])

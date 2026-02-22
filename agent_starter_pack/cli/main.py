@@ -25,6 +25,7 @@ from .commands.generate_skill import generate_skill
 from .commands.list import list_agents
 from .commands.register_gemini_enterprise import register_gemini_enterprise
 from .commands.setup_cicd import setup_cicd
+from .commands.upgrade import upgrade
 from .utils import display_update_message
 
 console = Console()
@@ -64,6 +65,7 @@ cli.add_command(extract)
 cli.add_command(generate_skill)
 cli.add_command(register_gemini_enterprise)
 cli.add_command(setup_cicd)
+cli.add_command(upgrade)
 cli.add_command(list_agents, name="list")
 
 

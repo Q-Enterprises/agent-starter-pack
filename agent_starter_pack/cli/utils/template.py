@@ -308,7 +308,13 @@ def validate_agent_directory_name(agent_dir: str, allow_dot: bool = False) -> No
 class TemplateConfig:
     name: str
     description: str
-    settings: dict[str, bool | list[str]]
+    settings: dict[str, Any]
+    skill_triggers: list[str] | None = None
+    skill_workflow: list[str] | None = None
+    skill_inputs: list[str] | None = None
+    skill_outputs: list[str] | None = None
+    skill_constraints: list[str] | None = None
+    skill_references: list[str] | None = None
 
     @classmethod
     def from_file(cls, config_path: pathlib.Path) -> "TemplateConfig":
@@ -320,17 +326,29 @@ class TemplateConfig:
             if not isinstance(data, dict):
                 raise ValueError(f"Invalid template config format in {config_path}")
 
-            required_fields = ["name", "description", "settings"]
+            required_fields = ["description", "settings"]
             missing_fields = [f for f in required_fields if f not in data]
             if missing_fields:
                 raise ValueError(
                     f"Missing required fields in template config: {missing_fields}"
                 )
 
+            _validate_skill_metadata(
+                data,
+                source=str(config_path),
+                strict=True,
+            )
+
             return cls(
-                name=data["name"],
+                name=data.get("name", config_path.parent.parent.name),
                 description=data["description"],
                 settings=data["settings"],
+                skill_triggers=data.get("skill_triggers"),
+                skill_workflow=data.get("skill_workflow"),
+                skill_inputs=data.get("skill_inputs"),
+                skill_outputs=data.get("skill_outputs"),
+                skill_constraints=data.get("skill_constraints"),
+                skill_references=data.get("skill_references"),
             )
         except yaml.YAMLError as err:
             raise ValueError(f"Invalid YAML in template config: {err}") from err
@@ -347,6 +365,58 @@ TEMPLATE_CONFIG_FILE = "templateconfig.yaml"
 DEPLOYMENT_TARGETS = ["cloud_run", "agent_engine"]
 SUPPORTED_LANGUAGES = ["python", "go"]
 DEFAULT_FRONTEND = "None"
+SKILL_METADATA_FIELDS = (
+    "skill_triggers",
+    "skill_workflow",
+    "skill_inputs",
+    "skill_outputs",
+    "skill_constraints",
+    "skill_references",
+)
+
+
+def _validate_skill_metadata(
+    config: dict[str, Any], source: str, strict: bool = False
+) -> None:
+    """Validate optional skill metadata fields.
+
+    Args:
+        config: Template config dictionary.
+        source: Config source for logging/error messages.
+        strict: If True, raise ValueError for malformed metadata.
+    """
+    for field in SKILL_METADATA_FIELDS:
+        value = config.get(field)
+        if value is None:
+            continue
+
+        if not isinstance(value, list):
+            msg = (
+                f"Malformed template metadata in {source}: '{field}' must be a list "
+                f"of strings, got {type(value).__name__}."
+            )
+            if strict:
+                raise ValueError(msg)
+            logging.warning(msg)
+            continue
+
+        non_string_idx = [idx for idx, item in enumerate(value) if not isinstance(item, str)]
+        if non_string_idx:
+            msg = (
+                f"Malformed template metadata in {source}: '{field}' must contain only "
+                f"strings. Invalid indexes: {non_string_idx}."
+            )
+            if strict:
+                raise ValueError(msg)
+            logging.warning(msg)
+
+        if not value:
+            logging.warning(
+                "Template metadata field '%s' in %s is an empty list; "
+                "omit it if not used.",
+                field,
+                source,
+            )
 
 
 def get_available_agents(deployment_target: str | None = None) -> dict:
@@ -378,6 +448,13 @@ def get_available_agents(deployment_target: str | None = None) -> dict:
                 try:
                     with open(template_config_path, encoding="utf-8") as f:
                         config = yaml.safe_load(f)
+                    if not isinstance(config, dict):
+                        raise ValueError("Template config must be a YAML mapping")
+                    _validate_skill_metadata(
+                        config,
+                        source=str(template_config_path),
+                        strict=False,
+                    )
                     agent_name = agent_dir.name
                     settings = config.get("settings", {})
 
@@ -409,6 +486,12 @@ def get_available_agents(deployment_target: str | None = None) -> dict:
                         "description": description,
                         "language": language,
                         "framework": framework,
+                        "skill_triggers": config.get("skill_triggers", []),
+                        "skill_workflow": config.get("skill_workflow", []),
+                        "skill_inputs": config.get("skill_inputs", []),
+                        "skill_outputs": config.get("skill_outputs", []),
+                        "skill_constraints": config.get("skill_constraints", []),
+                        "skill_references": config.get("skill_references", []),
                         "priority": priority,
                     }
                     agents_list.append(agent_info)
@@ -444,7 +527,14 @@ def load_template_config(template_dir: pathlib.Path) -> dict[str, Any]:
     try:
         with open(config_file, encoding="utf-8") as f:
             config = yaml.safe_load(f)
-            return config if config else {}
+            loaded_config = config if config else {}
+            if loaded_config:
+                _validate_skill_metadata(
+                    loaded_config,
+                    source=str(config_file),
+                    strict=True,
+                )
+            return loaded_config
     except Exception as e:
         logging.error(f"Error loading template config: {e}")
         return {}
@@ -1630,6 +1720,7 @@ def process_template(
             # Apply conditional file logic (Windows-compatible replacement for Jinja2 filenames)
             conditional_config = {
                 "agent_name": agent_name,
+                "deployment_target": deployment_target,
                 "cicd_runner": cicd_runner or "google_cloud_build",
                 "is_adk": "adk" in tags,
                 "is_adk_live": "adk_live" in tags,

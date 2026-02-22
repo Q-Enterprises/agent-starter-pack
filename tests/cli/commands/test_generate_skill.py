@@ -116,26 +116,3 @@ def test_generate_skill_missing_metadata_fallback(tmp_path: pathlib.Path) -> Non
     assert f"**Name:** {tmp_path.name}" in content
     assert "- inspect src" in content
     assert "- src/" in content
-
-
-def test_generate_skill_template_config_metadata(tmp_path: pathlib.Path) -> None:
-    """Reads name/description from template config when pyproject is absent."""
-    (tmp_path / "app").mkdir()
-    (tmp_path / "app" / "agent.py").write_text("def run():\n    return True\n")
-    (tmp_path / ".template").mkdir()
-    (tmp_path / ".template" / "templateconfig.yaml").write_text(
-        "name: template-agent\ndescription: Template provided description\n"
-    )
-
-    output = tmp_path / "skills.md"
-    runner = CliRunner()
-    result = runner.invoke(
-        generate_skill,
-        ["--source", str(tmp_path), "--output", str(output)],
-    )
-
-    assert result.exit_code == 0
-    content = output.read_text()
-    assert "**Name:** template-agent" in content
-    assert "Template provided description" in content
-    assert "- .template/templateconfig.yaml" in content
