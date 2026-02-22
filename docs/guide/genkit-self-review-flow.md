@@ -28,7 +28,7 @@ export const agentFlow = defineFlow(
     }),
   },
   async (prompt) => {
-    const model = vertexAI.model('gemini-1.5-flash-preview');
+    const model = vertexAI.model('gemini-1.5-flash');
 
     // 1) Primary generation with tool availability.
     const initial = await model.generate({
