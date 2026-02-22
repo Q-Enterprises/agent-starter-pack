@@ -39,7 +39,11 @@ export const agentFlow = defineFlow(
     // 2) If a tool call is requested, execute it, then run a verification pass.
     const toolRequest = initial.toolRequest();
     if (toolRequest) {
-      await toolRequest.run();
+      try {
+        await toolRequest.run();
+      } catch (error) {
+        return { status: 'Failed', analysis: 'Tool execution failed: ' + error };
+      }
 
       const targetPath =
         typeof toolRequest.params?.path === 'string'
