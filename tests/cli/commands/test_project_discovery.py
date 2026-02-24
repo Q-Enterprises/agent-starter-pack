@@ -14,11 +14,11 @@
 
 """Unit tests for project discovery helpers."""
 
-import pathlib
 import logging
-from typing import Any
+import pathlib
 
 import pytest
+
 from agent_starter_pack.cli.commands.project_discovery import (
     detect_agent_directory,
     detect_language,
@@ -114,6 +114,30 @@ class TestDetectLanguage:
 
     def test_detect_language_default(self, tmp_path: pathlib.Path) -> None:
         """Test default to python."""
+        assert detect_language(tmp_path) == "python"
+
+    def test_detect_language_unknown_in_asp_toml(self, tmp_path: pathlib.Path) -> None:
+        """Test detection when .asp.toml has an unknown language."""
+        (tmp_path / ".asp.toml").write_text('[project]\nlanguage = "rust"')
+        # Should fall back to python default since no other files exist
+        assert detect_language(tmp_path) == "python"
+
+    def test_detect_language_malformed_asp_toml(self, tmp_path: pathlib.Path) -> None:
+        """Test detection when .asp.toml is malformed."""
+        (tmp_path / ".asp.toml").write_text('invalid = [toml')
+        # Should fall back to python default
+        assert detect_language(tmp_path) == "python"
+
+    def test_detect_language_missing_keys_in_asp_toml(self, tmp_path: pathlib.Path) -> None:
+        """Test detection when .asp.toml is missing keys."""
+        (tmp_path / ".asp.toml").write_text('[project]\nname = "foo"')
+        # Should fall back to python default
+        assert detect_language(tmp_path) == "python"
+
+    def test_detect_language_empty_asp_toml(self, tmp_path: pathlib.Path) -> None:
+        """Test detection when .asp.toml is empty."""
+        (tmp_path / ".asp.toml").write_text('')
+        # Should fall back to python default
         assert detect_language(tmp_path) == "python"
 
 
