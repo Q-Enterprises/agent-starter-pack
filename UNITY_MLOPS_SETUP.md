@@ -13,7 +13,7 @@ This guide explains how to use `mlops_unity_pipeline.py` to automate Unity code 
 Install dependencies:
 
 ```bash
-pip install mlagents==1.0.0 pyyaml croniter
+pip install mlagents==1.0.0 pyyaml==6.0.1 croniter==1.4.0
 ```
 
 ## Core Components
