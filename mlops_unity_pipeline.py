@@ -47,7 +47,7 @@ class RLTrainingConfig:
     batch_size: int = 1024
     buffer_size: int = 8192
     time_scale: float = 20.0
-    use_offline_rl: bool = True
+    use_offline_rl: bool = False
     demonstrations_path: str | None = None
     learning_rate: float = 3e-4
     gamma: float = 0.99
