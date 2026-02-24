@@ -19,9 +19,7 @@ This guide explains how to use `mlops_unity_pipeline.py` to automate a Unity + M
 
 Install minimal dependencies:
 
-```bash
-pip install mlagents==1.0.0 croniter pyyaml
-```
+pip install "mlagents>=1.0.0,<2.0.0" croniter pyyaml
 
 ## Quick start
 
