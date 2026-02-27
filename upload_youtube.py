@@ -15,7 +15,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--tags", nargs="*", default=["ai", "agents", "embedding", "education"])
     parser.add_argument("--category-id", default="28", help="YouTube category (28=Science & Technology)")
     parser.add_argument("--privacy-status", choices=["private", "unlisted", "public"], default="unlisted")
-    parser.add_argument("--client-secrets", default="client_secret.json", type=Path)
+    parser.add_argument("--client-secrets", required=True, type=Path, help="Path to client secrets JSON file")
     parser.add_argument("--token-file", default="youtube_token.json", type=Path)
     return parser.parse_args()
 
