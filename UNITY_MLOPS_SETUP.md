@@ -66,7 +66,6 @@ Run it:
 
 ```bash
 python test.py
-```
 
 ## Scheduling 24/7 training
 
