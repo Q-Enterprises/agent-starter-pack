@@ -1,0 +1,2972 @@
+[
+  {
+    "balloon_id": 1,
+    "token_cluster": [
+      "agent",
+      "goal",
+      "state",
+      "action",
+      "concept_01"
+    ],
+    "embedding_slice": {
+      "layer": 4,
+      "head_range": [
+        0,
+        1
+      ],
+      "dim_range": [
+        0,
+        63
+      ]
+    },
+    "semantic_role": "planning",
+    "color": "#FF2D2D",
+    "radius": 0.55,
+    "trajectory": "spiral_up",
+    "music_cue_ms": [
+      0,
+      1800
+    ],
+    "caption": "Balloon 01: planning"
+  },
+  {
+    "balloon_id": 2,
+    "token_cluster": [
+      "token",
+      "embedding",
+      "vector",
+      "attention",
+      "concept_02"
+    ],
+    "embedding_slice": {
+      "layer": 5,
+      "head_range": [
+        2,
+        3
+      ],
+      "dim_range": [
+        32,
+        95
+      ]
+    },
+    "semantic_role": "reasoning",
+    "color": "#FF2D2D",
+    "radius": 0.6,
+    "trajectory": "sine_drift",
+    "music_cue_ms": [
+      2200,
+      4000
+    ],
+    "caption": "Balloon 02: reasoning"
+  },
+  {
+    "balloon_id": 3,
+    "token_cluster": [
+      "function",
+      "class",
+      "module",
+      "import",
+      "concept_03"
+    ],
+    "embedding_slice": {
+      "layer": 6,
+      "head_range": [
+        4,
+        5
+      ],
+      "dim_range": [
+        64,
+        127
+      ]
+    },
+    "semantic_role": "state-tracking",
+    "color": "#FF2D2D",
+    "radius": 0.65,
+    "trajectory": "helix",
+    "music_cue_ms": [
+      4400,
+      6200
+    ],
+    "caption": "Balloon 03: state-tracking"
+  },
+  {
+    "balloon_id": 4,
+    "token_cluster": [
+      "test",
+      "assert",
+      "fixture",
+      "coverage",
+      "concept_04"
+    ],
+    "embedding_slice": {
+      "layer": 7,
+      "head_range": [
+        6,
+        7
+      ],
+      "dim_range": [
+        96,
+        159
+      ]
+    },
+    "semantic_role": "tool-use",
+    "color": "#FF2D2D",
+    "radius": 0.7,
+    "trajectory": "arc_left",
+    "music_cue_ms": [
+      6600,
+      8400
+    ],
+    "caption": "Balloon 04: tool-use"
+  },
+  {
+    "balloon_id": 5,
+    "token_cluster": [
+      "build",
+      "deploy",
+      "workflow",
+      "runner",
+      "concept_05"
+    ],
+    "embedding_slice": {
+      "layer": 8,
+      "head_range": [
+        8,
+        9
+      ],
+      "dim_range": [
+        128,
+        191
+      ]
+    },
+    "semantic_role": "testing",
+    "color": "#FF2D2D",
+    "radius": 0.75,
+    "trajectory": "arc_right",
+    "music_cue_ms": [
+      8800,
+      10600
+    ],
+    "caption": "Balloon 05: testing"
+  },
+  {
+    "balloon_id": 6,
+    "token_cluster": [
+      "bug",
+      "trace",
+      "log",
+      "patch",
+      "concept_06"
+    ],
+    "embedding_slice": {
+      "layer": 9,
+      "head_range": [
+        10,
+        11
+      ],
+      "dim_range": [
+        160,
+        223
+      ]
+    },
+    "semantic_role": "debugging",
+    "color": "#FF2D2D",
+    "radius": 0.8,
+    "trajectory": "float",
+    "music_cue_ms": [
+      11000,
+      12800
+    ],
+    "caption": "Balloon 06: debugging"
+  },
+  {
+    "balloon_id": 7,
+    "token_cluster": [
+      "api",
+      "request",
+      "response",
+      "schema",
+      "concept_07"
+    ],
+    "embedding_slice": {
+      "layer": 10,
+      "head_range": [
+        12,
+        13
+      ],
+      "dim_range": [
+        192,
+        255
+      ]
+    },
+    "semantic_role": "refactoring",
+    "color": "#FF2D2D",
+    "radius": 0.85,
+    "trajectory": "zigzag",
+    "music_cue_ms": [
+      13200,
+      15000
+    ],
+    "caption": "Balloon 07: refactoring"
+  },
+  {
+    "balloon_id": 8,
+    "token_cluster": [
+      "prompt",
+      "instruction",
+      "context",
+      "tool",
+      "concept_08"
+    ],
+    "embedding_slice": {
+      "layer": 11,
+      "head_range": [
+        14,
+        15
+      ],
+      "dim_range": [
+        224,
+        287
+      ]
+    },
+    "semantic_role": "documentation",
+    "color": "#FF2D2D",
+    "radius": 0.9,
+    "trajectory": "pulse_ring",
+    "music_cue_ms": [
+      15400,
+      17200
+    ],
+    "caption": "Balloon 08: documentation"
+  },
+  {
+    "balloon_id": 9,
+    "token_cluster": [
+      "reward",
+      "policy",
+      "episode",
+      "environment",
+      "concept_09"
+    ],
+    "embedding_slice": {
+      "layer": 12,
+      "head_range": [
+        0,
+        1
+      ],
+      "dim_range": [
+        256,
+        319
+      ]
+    },
+    "semantic_role": "deployment",
+    "color": "#FF2D2D",
+    "radius": 0.95,
+    "trajectory": "orbit",
+    "music_cue_ms": [
+      17600,
+      19400
+    ],
+    "caption": "Balloon 09: deployment"
+  },
+  {
+    "balloon_id": 10,
+    "token_cluster": [
+      "latency",
+      "throughput",
+      "memory",
+      "gpu",
+      "concept_10"
+    ],
+    "embedding_slice": {
+      "layer": 13,
+      "head_range": [
+        2,
+        3
+      ],
+      "dim_range": [
+        288,
+        351
+      ]
+    },
+    "semantic_role": "monitoring",
+    "color": "#FF2D2D",
+    "radius": 0.55,
+    "trajectory": "rise_fade",
+    "music_cue_ms": [
+      19800,
+      21600
+    ],
+    "caption": "Balloon 10: monitoring"
+  },
+  {
+    "balloon_id": 11,
+    "token_cluster": [
+      "safety",
+      "validation",
+      "guardrail",
+      "review",
+      "concept_11"
+    ],
+    "embedding_slice": {
+      "layer": 14,
+      "head_range": [
+        4,
+        5
+      ],
+      "dim_range": [
+        320,
+        383
+      ]
+    },
+    "semantic_role": "security",
+    "color": "#FF2D2D",
+    "radius": 0.6,
+    "trajectory": "wave",
+    "music_cue_ms": [
+      22000,
+      23800
+    ],
+    "caption": "Balloon 11: security"
+  },
+  {
+    "balloon_id": 12,
+    "token_cluster": [
+      "agent",
+      "goal",
+      "state",
+      "action",
+      "concept_12"
+    ],
+    "embedding_slice": {
+      "layer": 15,
+      "head_range": [
+        6,
+        7
+      ],
+      "dim_range": [
+        352,
+        415
+      ]
+    },
+    "semantic_role": "planning",
+    "color": "#FF2D2D",
+    "radius": 0.65,
+    "trajectory": "spiral_up",
+    "music_cue_ms": [
+      24200,
+      26000
+    ],
+    "caption": "Balloon 12: planning"
+  },
+  {
+    "balloon_id": 13,
+    "token_cluster": [
+      "token",
+      "embedding",
+      "vector",
+      "attention",
+      "concept_13"
+    ],
+    "embedding_slice": {
+      "layer": 16,
+      "head_range": [
+        8,
+        9
+      ],
+      "dim_range": [
+        384,
+        447
+      ]
+    },
+    "semantic_role": "reasoning",
+    "color": "#FF2D2D",
+    "radius": 0.7,
+    "trajectory": "sine_drift",
+    "music_cue_ms": [
+      26400,
+      28200
+    ],
+    "caption": "Balloon 13: reasoning"
+  },
+  {
+    "balloon_id": 14,
+    "token_cluster": [
+      "function",
+      "class",
+      "module",
+      "import",
+      "concept_14"
+    ],
+    "embedding_slice": {
+      "layer": 17,
+      "head_range": [
+        10,
+        11
+      ],
+      "dim_range": [
+        416,
+        479
+      ]
+    },
+    "semantic_role": "state-tracking",
+    "color": "#FF2D2D",
+    "radius": 0.75,
+    "trajectory": "helix",
+    "music_cue_ms": [
+      28600,
+      30400
+    ],
+    "caption": "Balloon 14: state-tracking"
+  },
+  {
+    "balloon_id": 15,
+    "token_cluster": [
+      "test",
+      "assert",
+      "fixture",
+      "coverage",
+      "concept_15"
+    ],
+    "embedding_slice": {
+      "layer": 18,
+      "head_range": [
+        12,
+        13
+      ],
+      "dim_range": [
+        448,
+        511
+      ]
+    },
+    "semantic_role": "tool-use",
+    "color": "#FF2D2D",
+    "radius": 0.8,
+    "trajectory": "arc_left",
+    "music_cue_ms": [
+      30800,
+      32600
+    ],
+    "caption": "Balloon 15: tool-use"
+  },
+  {
+    "balloon_id": 16,
+    "token_cluster": [
+      "build",
+      "deploy",
+      "workflow",
+      "runner",
+      "concept_16"
+    ],
+    "embedding_slice": {
+      "layer": 19,
+      "head_range": [
+        14,
+        15
+      ],
+      "dim_range": [
+        480,
+        543
+      ]
+    },
+    "semantic_role": "testing",
+    "color": "#FF2D2D",
+    "radius": 0.85,
+    "trajectory": "arc_right",
+    "music_cue_ms": [
+      33000,
+      34800
+    ],
+    "caption": "Balloon 16: testing"
+  },
+  {
+    "balloon_id": 17,
+    "token_cluster": [
+      "bug",
+      "trace",
+      "log",
+      "patch",
+      "concept_17"
+    ],
+    "embedding_slice": {
+      "layer": 20,
+      "head_range": [
+        0,
+        1
+      ],
+      "dim_range": [
+        512,
+        575
+      ]
+    },
+    "semantic_role": "debugging",
+    "color": "#FF2D2D",
+    "radius": 0.9,
+    "trajectory": "float",
+    "music_cue_ms": [
+      35200,
+      37000
+    ],
+    "caption": "Balloon 17: debugging"
+  },
+  {
+    "balloon_id": 18,
+    "token_cluster": [
+      "api",
+      "request",
+      "response",
+      "schema",
+      "concept_18"
+    ],
+    "embedding_slice": {
+      "layer": 21,
+      "head_range": [
+        2,
+        3
+      ],
+      "dim_range": [
+        544,
+        607
+      ]
+    },
+    "semantic_role": "refactoring",
+    "color": "#FF2D2D",
+    "radius": 0.95,
+    "trajectory": "zigzag",
+    "music_cue_ms": [
+      37400,
+      39200
+    ],
+    "caption": "Balloon 18: refactoring"
+  },
+  {
+    "balloon_id": 19,
+    "token_cluster": [
+      "prompt",
+      "instruction",
+      "context",
+      "tool",
+      "concept_19"
+    ],
+    "embedding_slice": {
+      "layer": 22,
+      "head_range": [
+        4,
+        5
+      ],
+      "dim_range": [
+        576,
+        639
+      ]
+    },
+    "semantic_role": "documentation",
+    "color": "#FF2D2D",
+    "radius": 0.55,
+    "trajectory": "pulse_ring",
+    "music_cue_ms": [
+      39600,
+      41400
+    ],
+    "caption": "Balloon 19: documentation"
+  },
+  {
+    "balloon_id": 20,
+    "token_cluster": [
+      "reward",
+      "policy",
+      "episode",
+      "environment",
+      "concept_20"
+    ],
+    "embedding_slice": {
+      "layer": 23,
+      "head_range": [
+        6,
+        7
+      ],
+      "dim_range": [
+        608,
+        671
+      ]
+    },
+    "semantic_role": "deployment",
+    "color": "#FF2D2D",
+    "radius": 0.6,
+    "trajectory": "orbit",
+    "music_cue_ms": [
+      41800,
+      43600
+    ],
+    "caption": "Balloon 20: deployment"
+  },
+  {
+    "balloon_id": 21,
+    "token_cluster": [
+      "latency",
+      "throughput",
+      "memory",
+      "gpu",
+      "concept_21"
+    ],
+    "embedding_slice": {
+      "layer": 4,
+      "head_range": [
+        8,
+        9
+      ],
+      "dim_range": [
+        640,
+        703
+      ]
+    },
+    "semantic_role": "monitoring",
+    "color": "#FF2D2D",
+    "radius": 0.65,
+    "trajectory": "rise_fade",
+    "music_cue_ms": [
+      44000,
+      45800
+    ],
+    "caption": "Balloon 21: monitoring"
+  },
+  {
+    "balloon_id": 22,
+    "token_cluster": [
+      "safety",
+      "validation",
+      "guardrail",
+      "review",
+      "concept_22"
+    ],
+    "embedding_slice": {
+      "layer": 5,
+      "head_range": [
+        10,
+        11
+      ],
+      "dim_range": [
+        672,
+        735
+      ]
+    },
+    "semantic_role": "security",
+    "color": "#FF2D2D",
+    "radius": 0.7,
+    "trajectory": "wave",
+    "music_cue_ms": [
+      46200,
+      48000
+    ],
+    "caption": "Balloon 22: security"
+  },
+  {
+    "balloon_id": 23,
+    "token_cluster": [
+      "agent",
+      "goal",
+      "state",
+      "action",
+      "concept_23"
+    ],
+    "embedding_slice": {
+      "layer": 6,
+      "head_range": [
+        12,
+        13
+      ],
+      "dim_range": [
+        704,
+        767
+      ]
+    },
+    "semantic_role": "planning",
+    "color": "#FF2D2D",
+    "radius": 0.75,
+    "trajectory": "spiral_up",
+    "music_cue_ms": [
+      48400,
+      50200
+    ],
+    "caption": "Balloon 23: planning"
+  },
+  {
+    "balloon_id": 24,
+    "token_cluster": [
+      "token",
+      "embedding",
+      "vector",
+      "attention",
+      "concept_24"
+    ],
+    "embedding_slice": {
+      "layer": 7,
+      "head_range": [
+        14,
+        15
+      ],
+      "dim_range": [
+        736,
+        799
+      ]
+    },
+    "semantic_role": "reasoning",
+    "color": "#FF2D2D",
+    "radius": 0.8,
+    "trajectory": "sine_drift",
+    "music_cue_ms": [
+      50600,
+      52400
+    ],
+    "caption": "Balloon 24: reasoning"
+  },
+  {
+    "balloon_id": 25,
+    "token_cluster": [
+      "function",
+      "class",
+      "module",
+      "import",
+      "concept_25"
+    ],
+    "embedding_slice": {
+      "layer": 8,
+      "head_range": [
+        0,
+        1
+      ],
+      "dim_range": [
+        768,
+        831
+      ]
+    },
+    "semantic_role": "state-tracking",
+    "color": "#FF2D2D",
+    "radius": 0.85,
+    "trajectory": "helix",
+    "music_cue_ms": [
+      52800,
+      54600
+    ],
+    "caption": "Balloon 25: state-tracking"
+  },
+  {
+    "balloon_id": 26,
+    "token_cluster": [
+      "test",
+      "assert",
+      "fixture",
+      "coverage",
+      "concept_26"
+    ],
+    "embedding_slice": {
+      "layer": 9,
+      "head_range": [
+        2,
+        3
+      ],
+      "dim_range": [
+        800,
+        863
+      ]
+    },
+    "semantic_role": "tool-use",
+    "color": "#FF2D2D",
+    "radius": 0.9,
+    "trajectory": "arc_left",
+    "music_cue_ms": [
+      55000,
+      56800
+    ],
+    "caption": "Balloon 26: tool-use"
+  },
+  {
+    "balloon_id": 27,
+    "token_cluster": [
+      "build",
+      "deploy",
+      "workflow",
+      "runner",
+      "concept_27"
+    ],
+    "embedding_slice": {
+      "layer": 10,
+      "head_range": [
+        4,
+        5
+      ],
+      "dim_range": [
+        832,
+        895
+      ]
+    },
+    "semantic_role": "testing",
+    "color": "#FF2D2D",
+    "radius": 0.95,
+    "trajectory": "arc_right",
+    "music_cue_ms": [
+      57200,
+      59000
+    ],
+    "caption": "Balloon 27: testing"
+  },
+  {
+    "balloon_id": 28,
+    "token_cluster": [
+      "bug",
+      "trace",
+      "log",
+      "patch",
+      "concept_28"
+    ],
+    "embedding_slice": {
+      "layer": 11,
+      "head_range": [
+        6,
+        7
+      ],
+      "dim_range": [
+        864,
+        927
+      ]
+    },
+    "semantic_role": "debugging",
+    "color": "#FF2D2D",
+    "radius": 0.55,
+    "trajectory": "float",
+    "music_cue_ms": [
+      59400,
+      61200
+    ],
+    "caption": "Balloon 28: debugging"
+  },
+  {
+    "balloon_id": 29,
+    "token_cluster": [
+      "api",
+      "request",
+      "response",
+      "schema",
+      "concept_29"
+    ],
+    "embedding_slice": {
+      "layer": 12,
+      "head_range": [
+        8,
+        9
+      ],
+      "dim_range": [
+        896,
+        959
+      ]
+    },
+    "semantic_role": "refactoring",
+    "color": "#FF2D2D",
+    "radius": 0.6,
+    "trajectory": "zigzag",
+    "music_cue_ms": [
+      61600,
+      63400
+    ],
+    "caption": "Balloon 29: refactoring"
+  },
+  {
+    "balloon_id": 30,
+    "token_cluster": [
+      "prompt",
+      "instruction",
+      "context",
+      "tool",
+      "concept_30"
+    ],
+    "embedding_slice": {
+      "layer": 13,
+      "head_range": [
+        10,
+        11
+      ],
+      "dim_range": [
+        928,
+        991
+      ]
+    },
+    "semantic_role": "documentation",
+    "color": "#FF2D2D",
+    "radius": 0.65,
+    "trajectory": "pulse_ring",
+    "music_cue_ms": [
+      63800,
+      65600
+    ],
+    "caption": "Balloon 30: documentation"
+  },
+  {
+    "balloon_id": 31,
+    "token_cluster": [
+      "reward",
+      "policy",
+      "episode",
+      "environment",
+      "concept_31"
+    ],
+    "embedding_slice": {
+      "layer": 14,
+      "head_range": [
+        12,
+        13
+      ],
+      "dim_range": [
+        960,
+        1023
+      ]
+    },
+    "semantic_role": "deployment",
+    "color": "#FF2D2D",
+    "radius": 0.7,
+    "trajectory": "orbit",
+    "music_cue_ms": [
+      66000,
+      67800
+    ],
+    "caption": "Balloon 31: deployment"
+  },
+  {
+    "balloon_id": 32,
+    "token_cluster": [
+      "latency",
+      "throughput",
+      "memory",
+      "gpu",
+      "concept_32"
+    ],
+    "embedding_slice": {
+      "layer": 15,
+      "head_range": [
+        14,
+        15
+      ],
+      "dim_range": [
+        992,
+        1023
+      ]
+    },
+    "semantic_role": "monitoring",
+    "color": "#FF2D2D",
+    "radius": 0.75,
+    "trajectory": "rise_fade",
+    "music_cue_ms": [
+      68200,
+      70000
+    ],
+    "caption": "Balloon 32: monitoring"
+  },
+  {
+    "balloon_id": 33,
+    "token_cluster": [
+      "safety",
+      "validation",
+      "guardrail",
+      "review",
+      "concept_33"
+    ],
+    "embedding_slice": {
+      "layer": 16,
+      "head_range": [
+        0,
+        1
+      ],
+      "dim_range": [
+        0,
+        63
+      ]
+    },
+    "semantic_role": "security",
+    "color": "#FF2D2D",
+    "radius": 0.8,
+    "trajectory": "wave",
+    "music_cue_ms": [
+      70400,
+      72200
+    ],
+    "caption": "Balloon 33: security"
+  },
+  {
+    "balloon_id": 34,
+    "token_cluster": [
+      "agent",
+      "goal",
+      "state",
+      "action",
+      "concept_34"
+    ],
+    "embedding_slice": {
+      "layer": 17,
+      "head_range": [
+        2,
+        3
+      ],
+      "dim_range": [
+        32,
+        95
+      ]
+    },
+    "semantic_role": "planning",
+    "color": "#FF2D2D",
+    "radius": 0.85,
+    "trajectory": "spiral_up",
+    "music_cue_ms": [
+      72600,
+      74400
+    ],
+    "caption": "Balloon 34: planning"
+  },
+  {
+    "balloon_id": 35,
+    "token_cluster": [
+      "token",
+      "embedding",
+      "vector",
+      "attention",
+      "concept_35"
+    ],
+    "embedding_slice": {
+      "layer": 18,
+      "head_range": [
+        4,
+        5
+      ],
+      "dim_range": [
+        64,
+        127
+      ]
+    },
+    "semantic_role": "reasoning",
+    "color": "#FF2D2D",
+    "radius": 0.9,
+    "trajectory": "sine_drift",
+    "music_cue_ms": [
+      74800,
+      76600
+    ],
+    "caption": "Balloon 35: reasoning"
+  },
+  {
+    "balloon_id": 36,
+    "token_cluster": [
+      "function",
+      "class",
+      "module",
+      "import",
+      "concept_36"
+    ],
+    "embedding_slice": {
+      "layer": 19,
+      "head_range": [
+        6,
+        7
+      ],
+      "dim_range": [
+        96,
+        159
+      ]
+    },
+    "semantic_role": "state-tracking",
+    "color": "#FF2D2D",
+    "radius": 0.95,
+    "trajectory": "helix",
+    "music_cue_ms": [
+      77000,
+      78800
+    ],
+    "caption": "Balloon 36: state-tracking"
+  },
+  {
+    "balloon_id": 37,
+    "token_cluster": [
+      "test",
+      "assert",
+      "fixture",
+      "coverage",
+      "concept_37"
+    ],
+    "embedding_slice": {
+      "layer": 20,
+      "head_range": [
+        8,
+        9
+      ],
+      "dim_range": [
+        128,
+        191
+      ]
+    },
+    "semantic_role": "tool-use",
+    "color": "#FF2D2D",
+    "radius": 0.55,
+    "trajectory": "arc_left",
+    "music_cue_ms": [
+      79200,
+      81000
+    ],
+    "caption": "Balloon 37: tool-use"
+  },
+  {
+    "balloon_id": 38,
+    "token_cluster": [
+      "build",
+      "deploy",
+      "workflow",
+      "runner",
+      "concept_38"
+    ],
+    "embedding_slice": {
+      "layer": 21,
+      "head_range": [
+        10,
+        11
+      ],
+      "dim_range": [
+        160,
+        223
+      ]
+    },
+    "semantic_role": "testing",
+    "color": "#FF2D2D",
+    "radius": 0.6,
+    "trajectory": "arc_right",
+    "music_cue_ms": [
+      81400,
+      83200
+    ],
+    "caption": "Balloon 38: testing"
+  },
+  {
+    "balloon_id": 39,
+    "token_cluster": [
+      "bug",
+      "trace",
+      "log",
+      "patch",
+      "concept_39"
+    ],
+    "embedding_slice": {
+      "layer": 22,
+      "head_range": [
+        12,
+        13
+      ],
+      "dim_range": [
+        192,
+        255
+      ]
+    },
+    "semantic_role": "debugging",
+    "color": "#FF2D2D",
+    "radius": 0.65,
+    "trajectory": "float",
+    "music_cue_ms": [
+      83600,
+      85400
+    ],
+    "caption": "Balloon 39: debugging"
+  },
+  {
+    "balloon_id": 40,
+    "token_cluster": [
+      "api",
+      "request",
+      "response",
+      "schema",
+      "concept_40"
+    ],
+    "embedding_slice": {
+      "layer": 23,
+      "head_range": [
+        14,
+        15
+      ],
+      "dim_range": [
+        224,
+        287
+      ]
+    },
+    "semantic_role": "refactoring",
+    "color": "#FF2D2D",
+    "radius": 0.7,
+    "trajectory": "zigzag",
+    "music_cue_ms": [
+      85800,
+      87600
+    ],
+    "caption": "Balloon 40: refactoring"
+  },
+  {
+    "balloon_id": 41,
+    "token_cluster": [
+      "prompt",
+      "instruction",
+      "context",
+      "tool",
+      "concept_41"
+    ],
+    "embedding_slice": {
+      "layer": 4,
+      "head_range": [
+        0,
+        1
+      ],
+      "dim_range": [
+        256,
+        319
+      ]
+    },
+    "semantic_role": "documentation",
+    "color": "#FF2D2D",
+    "radius": 0.75,
+    "trajectory": "pulse_ring",
+    "music_cue_ms": [
+      88000,
+      89800
+    ],
+    "caption": "Balloon 41: documentation"
+  },
+  {
+    "balloon_id": 42,
+    "token_cluster": [
+      "reward",
+      "policy",
+      "episode",
+      "environment",
+      "concept_42"
+    ],
+    "embedding_slice": {
+      "layer": 5,
+      "head_range": [
+        2,
+        3
+      ],
+      "dim_range": [
+        288,
+        351
+      ]
+    },
+    "semantic_role": "deployment",
+    "color": "#FF2D2D",
+    "radius": 0.8,
+    "trajectory": "orbit",
+    "music_cue_ms": [
+      90200,
+      92000
+    ],
+    "caption": "Balloon 42: deployment"
+  },
+  {
+    "balloon_id": 43,
+    "token_cluster": [
+      "latency",
+      "throughput",
+      "memory",
+      "gpu",
+      "concept_43"
+    ],
+    "embedding_slice": {
+      "layer": 6,
+      "head_range": [
+        4,
+        5
+      ],
+      "dim_range": [
+        320,
+        383
+      ]
+    },
+    "semantic_role": "monitoring",
+    "color": "#FF2D2D",
+    "radius": 0.85,
+    "trajectory": "rise_fade",
+    "music_cue_ms": [
+      92400,
+      94200
+    ],
+    "caption": "Balloon 43: monitoring"
+  },
+  {
+    "balloon_id": 44,
+    "token_cluster": [
+      "safety",
+      "validation",
+      "guardrail",
+      "review",
+      "concept_44"
+    ],
+    "embedding_slice": {
+      "layer": 7,
+      "head_range": [
+        6,
+        7
+      ],
+      "dim_range": [
+        352,
+        415
+      ]
+    },
+    "semantic_role": "security",
+    "color": "#FF2D2D",
+    "radius": 0.9,
+    "trajectory": "wave",
+    "music_cue_ms": [
+      94600,
+      96400
+    ],
+    "caption": "Balloon 44: security"
+  },
+  {
+    "balloon_id": 45,
+    "token_cluster": [
+      "agent",
+      "goal",
+      "state",
+      "action",
+      "concept_45"
+    ],
+    "embedding_slice": {
+      "layer": 8,
+      "head_range": [
+        8,
+        9
+      ],
+      "dim_range": [
+        384,
+        447
+      ]
+    },
+    "semantic_role": "planning",
+    "color": "#FF2D2D",
+    "radius": 0.95,
+    "trajectory": "spiral_up",
+    "music_cue_ms": [
+      96800,
+      98600
+    ],
+    "caption": "Balloon 45: planning"
+  },
+  {
+    "balloon_id": 46,
+    "token_cluster": [
+      "token",
+      "embedding",
+      "vector",
+      "attention",
+      "concept_46"
+    ],
+    "embedding_slice": {
+      "layer": 9,
+      "head_range": [
+        10,
+        11
+      ],
+      "dim_range": [
+        416,
+        479
+      ]
+    },
+    "semantic_role": "reasoning",
+    "color": "#FF2D2D",
+    "radius": 0.55,
+    "trajectory": "sine_drift",
+    "music_cue_ms": [
+      99000,
+      100800
+    ],
+    "caption": "Balloon 46: reasoning"
+  },
+  {
+    "balloon_id": 47,
+    "token_cluster": [
+      "function",
+      "class",
+      "module",
+      "import",
+      "concept_47"
+    ],
+    "embedding_slice": {
+      "layer": 10,
+      "head_range": [
+        12,
+        13
+      ],
+      "dim_range": [
+        448,
+        511
+      ]
+    },
+    "semantic_role": "state-tracking",
+    "color": "#FF2D2D",
+    "radius": 0.6,
+    "trajectory": "helix",
+    "music_cue_ms": [
+      101200,
+      103000
+    ],
+    "caption": "Balloon 47: state-tracking"
+  },
+  {
+    "balloon_id": 48,
+    "token_cluster": [
+      "test",
+      "assert",
+      "fixture",
+      "coverage",
+      "concept_48"
+    ],
+    "embedding_slice": {
+      "layer": 11,
+      "head_range": [
+        14,
+        15
+      ],
+      "dim_range": [
+        480,
+        543
+      ]
+    },
+    "semantic_role": "tool-use",
+    "color": "#FF2D2D",
+    "radius": 0.65,
+    "trajectory": "arc_left",
+    "music_cue_ms": [
+      103400,
+      105200
+    ],
+    "caption": "Balloon 48: tool-use"
+  },
+  {
+    "balloon_id": 49,
+    "token_cluster": [
+      "build",
+      "deploy",
+      "workflow",
+      "runner",
+      "concept_49"
+    ],
+    "embedding_slice": {
+      "layer": 12,
+      "head_range": [
+        0,
+        1
+      ],
+      "dim_range": [
+        512,
+        575
+      ]
+    },
+    "semantic_role": "testing",
+    "color": "#FF2D2D",
+    "radius": 0.7,
+    "trajectory": "arc_right",
+    "music_cue_ms": [
+      105600,
+      107400
+    ],
+    "caption": "Balloon 49: testing"
+  },
+  {
+    "balloon_id": 50,
+    "token_cluster": [
+      "bug",
+      "trace",
+      "log",
+      "patch",
+      "concept_50"
+    ],
+    "embedding_slice": {
+      "layer": 13,
+      "head_range": [
+        2,
+        3
+      ],
+      "dim_range": [
+        544,
+        607
+      ]
+    },
+    "semantic_role": "debugging",
+    "color": "#FF2D2D",
+    "radius": 0.75,
+    "trajectory": "float",
+    "music_cue_ms": [
+      107800,
+      109600
+    ],
+    "caption": "Balloon 50: debugging"
+  },
+  {
+    "balloon_id": 51,
+    "token_cluster": [
+      "api",
+      "request",
+      "response",
+      "schema",
+      "concept_51"
+    ],
+    "embedding_slice": {
+      "layer": 14,
+      "head_range": [
+        4,
+        5
+      ],
+      "dim_range": [
+        576,
+        639
+      ]
+    },
+    "semantic_role": "refactoring",
+    "color": "#FF2D2D",
+    "radius": 0.8,
+    "trajectory": "zigzag",
+    "music_cue_ms": [
+      110000,
+      111800
+    ],
+    "caption": "Balloon 51: refactoring"
+  },
+  {
+    "balloon_id": 52,
+    "token_cluster": [
+      "prompt",
+      "instruction",
+      "context",
+      "tool",
+      "concept_52"
+    ],
+    "embedding_slice": {
+      "layer": 15,
+      "head_range": [
+        6,
+        7
+      ],
+      "dim_range": [
+        608,
+        671
+      ]
+    },
+    "semantic_role": "documentation",
+    "color": "#FF2D2D",
+    "radius": 0.85,
+    "trajectory": "pulse_ring",
+    "music_cue_ms": [
+      112200,
+      114000
+    ],
+    "caption": "Balloon 52: documentation"
+  },
+  {
+    "balloon_id": 53,
+    "token_cluster": [
+      "reward",
+      "policy",
+      "episode",
+      "environment",
+      "concept_53"
+    ],
+    "embedding_slice": {
+      "layer": 16,
+      "head_range": [
+        8,
+        9
+      ],
+      "dim_range": [
+        640,
+        703
+      ]
+    },
+    "semantic_role": "deployment",
+    "color": "#FF2D2D",
+    "radius": 0.9,
+    "trajectory": "orbit",
+    "music_cue_ms": [
+      114400,
+      116200
+    ],
+    "caption": "Balloon 53: deployment"
+  },
+  {
+    "balloon_id": 54,
+    "token_cluster": [
+      "latency",
+      "throughput",
+      "memory",
+      "gpu",
+      "concept_54"
+    ],
+    "embedding_slice": {
+      "layer": 17,
+      "head_range": [
+        10,
+        11
+      ],
+      "dim_range": [
+        672,
+        735
+      ]
+    },
+    "semantic_role": "monitoring",
+    "color": "#FF2D2D",
+    "radius": 0.95,
+    "trajectory": "rise_fade",
+    "music_cue_ms": [
+      116600,
+      118400
+    ],
+    "caption": "Balloon 54: monitoring"
+  },
+  {
+    "balloon_id": 55,
+    "token_cluster": [
+      "safety",
+      "validation",
+      "guardrail",
+      "review",
+      "concept_55"
+    ],
+    "embedding_slice": {
+      "layer": 18,
+      "head_range": [
+        12,
+        13
+      ],
+      "dim_range": [
+        704,
+        767
+      ]
+    },
+    "semantic_role": "security",
+    "color": "#FF2D2D",
+    "radius": 0.55,
+    "trajectory": "wave",
+    "music_cue_ms": [
+      118800,
+      120600
+    ],
+    "caption": "Balloon 55: security"
+  },
+  {
+    "balloon_id": 56,
+    "token_cluster": [
+      "agent",
+      "goal",
+      "state",
+      "action",
+      "concept_56"
+    ],
+    "embedding_slice": {
+      "layer": 19,
+      "head_range": [
+        14,
+        15
+      ],
+      "dim_range": [
+        736,
+        799
+      ]
+    },
+    "semantic_role": "planning",
+    "color": "#FF2D2D",
+    "radius": 0.6,
+    "trajectory": "spiral_up",
+    "music_cue_ms": [
+      121000,
+      122800
+    ],
+    "caption": "Balloon 56: planning"
+  },
+  {
+    "balloon_id": 57,
+    "token_cluster": [
+      "token",
+      "embedding",
+      "vector",
+      "attention",
+      "concept_57"
+    ],
+    "embedding_slice": {
+      "layer": 20,
+      "head_range": [
+        0,
+        1
+      ],
+      "dim_range": [
+        768,
+        831
+      ]
+    },
+    "semantic_role": "reasoning",
+    "color": "#FF2D2D",
+    "radius": 0.65,
+    "trajectory": "sine_drift",
+    "music_cue_ms": [
+      123200,
+      125000
+    ],
+    "caption": "Balloon 57: reasoning"
+  },
+  {
+    "balloon_id": 58,
+    "token_cluster": [
+      "function",
+      "class",
+      "module",
+      "import",
+      "concept_58"
+    ],
+    "embedding_slice": {
+      "layer": 21,
+      "head_range": [
+        2,
+        3
+      ],
+      "dim_range": [
+        800,
+        863
+      ]
+    },
+    "semantic_role": "state-tracking",
+    "color": "#FF2D2D",
+    "radius": 0.7,
+    "trajectory": "helix",
+    "music_cue_ms": [
+      125400,
+      127200
+    ],
+    "caption": "Balloon 58: state-tracking"
+  },
+  {
+    "balloon_id": 59,
+    "token_cluster": [
+      "test",
+      "assert",
+      "fixture",
+      "coverage",
+      "concept_59"
+    ],
+    "embedding_slice": {
+      "layer": 22,
+      "head_range": [
+        4,
+        5
+      ],
+      "dim_range": [
+        832,
+        895
+      ]
+    },
+    "semantic_role": "tool-use",
+    "color": "#FF2D2D",
+    "radius": 0.75,
+    "trajectory": "arc_left",
+    "music_cue_ms": [
+      127600,
+      129400
+    ],
+    "caption": "Balloon 59: tool-use"
+  },
+  {
+    "balloon_id": 60,
+    "token_cluster": [
+      "build",
+      "deploy",
+      "workflow",
+      "runner",
+      "concept_60"
+    ],
+    "embedding_slice": {
+      "layer": 23,
+      "head_range": [
+        6,
+        7
+      ],
+      "dim_range": [
+        864,
+        927
+      ]
+    },
+    "semantic_role": "testing",
+    "color": "#FF2D2D",
+    "radius": 0.8,
+    "trajectory": "arc_right",
+    "music_cue_ms": [
+      129800,
+      131600
+    ],
+    "caption": "Balloon 60: testing"
+  },
+  {
+    "balloon_id": 61,
+    "token_cluster": [
+      "bug",
+      "trace",
+      "log",
+      "patch",
+      "concept_61"
+    ],
+    "embedding_slice": {
+      "layer": 4,
+      "head_range": [
+        8,
+        9
+      ],
+      "dim_range": [
+        896,
+        959
+      ]
+    },
+    "semantic_role": "debugging",
+    "color": "#FF2D2D",
+    "radius": 0.85,
+    "trajectory": "float",
+    "music_cue_ms": [
+      132000,
+      133800
+    ],
+    "caption": "Balloon 61: debugging"
+  },
+  {
+    "balloon_id": 62,
+    "token_cluster": [
+      "api",
+      "request",
+      "response",
+      "schema",
+      "concept_62"
+    ],
+    "embedding_slice": {
+      "layer": 5,
+      "head_range": [
+        10,
+        11
+      ],
+      "dim_range": [
+        928,
+        991
+      ]
+    },
+    "semantic_role": "refactoring",
+    "color": "#FF2D2D",
+    "radius": 0.9,
+    "trajectory": "zigzag",
+    "music_cue_ms": [
+      134200,
+      136000
+    ],
+    "caption": "Balloon 62: refactoring"
+  },
+  {
+    "balloon_id": 63,
+    "token_cluster": [
+      "prompt",
+      "instruction",
+      "context",
+      "tool",
+      "concept_63"
+    ],
+    "embedding_slice": {
+      "layer": 6,
+      "head_range": [
+        12,
+        13
+      ],
+      "dim_range": [
+        960,
+        1023
+      ]
+    },
+    "semantic_role": "documentation",
+    "color": "#FF2D2D",
+    "radius": 0.95,
+    "trajectory": "pulse_ring",
+    "music_cue_ms": [
+      136400,
+      138200
+    ],
+    "caption": "Balloon 63: documentation"
+  },
+  {
+    "balloon_id": 64,
+    "token_cluster": [
+      "reward",
+      "policy",
+      "episode",
+      "environment",
+      "concept_64"
+    ],
+    "embedding_slice": {
+      "layer": 7,
+      "head_range": [
+        14,
+        15
+      ],
+      "dim_range": [
+        992,
+        1023
+      ]
+    },
+    "semantic_role": "deployment",
+    "color": "#FF2D2D",
+    "radius": 0.55,
+    "trajectory": "orbit",
+    "music_cue_ms": [
+      138600,
+      140400
+    ],
+    "caption": "Balloon 64: deployment"
+  },
+  {
+    "balloon_id": 65,
+    "token_cluster": [
+      "latency",
+      "throughput",
+      "memory",
+      "gpu",
+      "concept_65"
+    ],
+    "embedding_slice": {
+      "layer": 8,
+      "head_range": [
+        0,
+        1
+      ],
+      "dim_range": [
+        0,
+        63
+      ]
+    },
+    "semantic_role": "monitoring",
+    "color": "#FF2D2D",
+    "radius": 0.6,
+    "trajectory": "rise_fade",
+    "music_cue_ms": [
+      140800,
+      142600
+    ],
+    "caption": "Balloon 65: monitoring"
+  },
+  {
+    "balloon_id": 66,
+    "token_cluster": [
+      "safety",
+      "validation",
+      "guardrail",
+      "review",
+      "concept_66"
+    ],
+    "embedding_slice": {
+      "layer": 9,
+      "head_range": [
+        2,
+        3
+      ],
+      "dim_range": [
+        32,
+        95
+      ]
+    },
+    "semantic_role": "security",
+    "color": "#FF2D2D",
+    "radius": 0.65,
+    "trajectory": "wave",
+    "music_cue_ms": [
+      143000,
+      144800
+    ],
+    "caption": "Balloon 66: security"
+  },
+  {
+    "balloon_id": 67,
+    "token_cluster": [
+      "agent",
+      "goal",
+      "state",
+      "action",
+      "concept_67"
+    ],
+    "embedding_slice": {
+      "layer": 10,
+      "head_range": [
+        4,
+        5
+      ],
+      "dim_range": [
+        64,
+        127
+      ]
+    },
+    "semantic_role": "planning",
+    "color": "#FF2D2D",
+    "radius": 0.7,
+    "trajectory": "spiral_up",
+    "music_cue_ms": [
+      145200,
+      147000
+    ],
+    "caption": "Balloon 67: planning"
+  },
+  {
+    "balloon_id": 68,
+    "token_cluster": [
+      "token",
+      "embedding",
+      "vector",
+      "attention",
+      "concept_68"
+    ],
+    "embedding_slice": {
+      "layer": 11,
+      "head_range": [
+        6,
+        7
+      ],
+      "dim_range": [
+        96,
+        159
+      ]
+    },
+    "semantic_role": "reasoning",
+    "color": "#FF2D2D",
+    "radius": 0.75,
+    "trajectory": "sine_drift",
+    "music_cue_ms": [
+      147400,
+      149200
+    ],
+    "caption": "Balloon 68: reasoning"
+  },
+  {
+    "balloon_id": 69,
+    "token_cluster": [
+      "function",
+      "class",
+      "module",
+      "import",
+      "concept_69"
+    ],
+    "embedding_slice": {
+      "layer": 12,
+      "head_range": [
+        8,
+        9
+      ],
+      "dim_range": [
+        128,
+        191
+      ]
+    },
+    "semantic_role": "state-tracking",
+    "color": "#FF2D2D",
+    "radius": 0.8,
+    "trajectory": "helix",
+    "music_cue_ms": [
+      149600,
+      151400
+    ],
+    "caption": "Balloon 69: state-tracking"
+  },
+  {
+    "balloon_id": 70,
+    "token_cluster": [
+      "test",
+      "assert",
+      "fixture",
+      "coverage",
+      "concept_70"
+    ],
+    "embedding_slice": {
+      "layer": 13,
+      "head_range": [
+        10,
+        11
+      ],
+      "dim_range": [
+        160,
+        223
+      ]
+    },
+    "semantic_role": "tool-use",
+    "color": "#FF2D2D",
+    "radius": 0.85,
+    "trajectory": "arc_left",
+    "music_cue_ms": [
+      151800,
+      153600
+    ],
+    "caption": "Balloon 70: tool-use"
+  },
+  {
+    "balloon_id": 71,
+    "token_cluster": [
+      "build",
+      "deploy",
+      "workflow",
+      "runner",
+      "concept_71"
+    ],
+    "embedding_slice": {
+      "layer": 14,
+      "head_range": [
+        12,
+        13
+      ],
+      "dim_range": [
+        192,
+        255
+      ]
+    },
+    "semantic_role": "testing",
+    "color": "#FF2D2D",
+    "radius": 0.9,
+    "trajectory": "arc_right",
+    "music_cue_ms": [
+      154000,
+      155800
+    ],
+    "caption": "Balloon 71: testing"
+  },
+  {
+    "balloon_id": 72,
+    "token_cluster": [
+      "bug",
+      "trace",
+      "log",
+      "patch",
+      "concept_72"
+    ],
+    "embedding_slice": {
+      "layer": 15,
+      "head_range": [
+        14,
+        15
+      ],
+      "dim_range": [
+        224,
+        287
+      ]
+    },
+    "semantic_role": "debugging",
+    "color": "#FF2D2D",
+    "radius": 0.95,
+    "trajectory": "float",
+    "music_cue_ms": [
+      156200,
+      158000
+    ],
+    "caption": "Balloon 72: debugging"
+  },
+  {
+    "balloon_id": 73,
+    "token_cluster": [
+      "api",
+      "request",
+      "response",
+      "schema",
+      "concept_73"
+    ],
+    "embedding_slice": {
+      "layer": 16,
+      "head_range": [
+        0,
+        1
+      ],
+      "dim_range": [
+        256,
+        319
+      ]
+    },
+    "semantic_role": "refactoring",
+    "color": "#FF2D2D",
+    "radius": 0.55,
+    "trajectory": "zigzag",
+    "music_cue_ms": [
+      158400,
+      160200
+    ],
+    "caption": "Balloon 73: refactoring"
+  },
+  {
+    "balloon_id": 74,
+    "token_cluster": [
+      "prompt",
+      "instruction",
+      "context",
+      "tool",
+      "concept_74"
+    ],
+    "embedding_slice": {
+      "layer": 17,
+      "head_range": [
+        2,
+        3
+      ],
+      "dim_range": [
+        288,
+        351
+      ]
+    },
+    "semantic_role": "documentation",
+    "color": "#FF2D2D",
+    "radius": 0.6,
+    "trajectory": "pulse_ring",
+    "music_cue_ms": [
+      160600,
+      162400
+    ],
+    "caption": "Balloon 74: documentation"
+  },
+  {
+    "balloon_id": 75,
+    "token_cluster": [
+      "reward",
+      "policy",
+      "episode",
+      "environment",
+      "concept_75"
+    ],
+    "embedding_slice": {
+      "layer": 18,
+      "head_range": [
+        4,
+        5
+      ],
+      "dim_range": [
+        320,
+        383
+      ]
+    },
+    "semantic_role": "deployment",
+    "color": "#FF2D2D",
+    "radius": 0.65,
+    "trajectory": "orbit",
+    "music_cue_ms": [
+      162800,
+      164600
+    ],
+    "caption": "Balloon 75: deployment"
+  },
+  {
+    "balloon_id": 76,
+    "token_cluster": [
+      "latency",
+      "throughput",
+      "memory",
+      "gpu",
+      "concept_76"
+    ],
+    "embedding_slice": {
+      "layer": 19,
+      "head_range": [
+        6,
+        7
+      ],
+      "dim_range": [
+        352,
+        415
+      ]
+    },
+    "semantic_role": "monitoring",
+    "color": "#FF2D2D",
+    "radius": 0.7,
+    "trajectory": "rise_fade",
+    "music_cue_ms": [
+      165000,
+      166800
+    ],
+    "caption": "Balloon 76: monitoring"
+  },
+  {
+    "balloon_id": 77,
+    "token_cluster": [
+      "safety",
+      "validation",
+      "guardrail",
+      "review",
+      "concept_77"
+    ],
+    "embedding_slice": {
+      "layer": 20,
+      "head_range": [
+        8,
+        9
+      ],
+      "dim_range": [
+        384,
+        447
+      ]
+    },
+    "semantic_role": "security",
+    "color": "#FF2D2D",
+    "radius": 0.75,
+    "trajectory": "wave",
+    "music_cue_ms": [
+      167200,
+      169000
+    ],
+    "caption": "Balloon 77: security"
+  },
+  {
+    "balloon_id": 78,
+    "token_cluster": [
+      "agent",
+      "goal",
+      "state",
+      "action",
+      "concept_78"
+    ],
+    "embedding_slice": {
+      "layer": 21,
+      "head_range": [
+        10,
+        11
+      ],
+      "dim_range": [
+        416,
+        479
+      ]
+    },
+    "semantic_role": "planning",
+    "color": "#FF2D2D",
+    "radius": 0.8,
+    "trajectory": "spiral_up",
+    "music_cue_ms": [
+      169400,
+      171200
+    ],
+    "caption": "Balloon 78: planning"
+  },
+  {
+    "balloon_id": 79,
+    "token_cluster": [
+      "token",
+      "embedding",
+      "vector",
+      "attention",
+      "concept_79"
+    ],
+    "embedding_slice": {
+      "layer": 22,
+      "head_range": [
+        12,
+        13
+      ],
+      "dim_range": [
+        448,
+        511
+      ]
+    },
+    "semantic_role": "reasoning",
+    "color": "#FF2D2D",
+    "radius": 0.85,
+    "trajectory": "sine_drift",
+    "music_cue_ms": [
+      171600,
+      173400
+    ],
+    "caption": "Balloon 79: reasoning"
+  },
+  {
+    "balloon_id": 80,
+    "token_cluster": [
+      "function",
+      "class",
+      "module",
+      "import",
+      "concept_80"
+    ],
+    "embedding_slice": {
+      "layer": 23,
+      "head_range": [
+        14,
+        15
+      ],
+      "dim_range": [
+        480,
+        543
+      ]
+    },
+    "semantic_role": "state-tracking",
+    "color": "#FF2D2D",
+    "radius": 0.9,
+    "trajectory": "helix",
+    "music_cue_ms": [
+      173800,
+      175600
+    ],
+    "caption": "Balloon 80: state-tracking"
+  },
+  {
+    "balloon_id": 81,
+    "token_cluster": [
+      "test",
+      "assert",
+      "fixture",
+      "coverage",
+      "concept_81"
+    ],
+    "embedding_slice": {
+      "layer": 4,
+      "head_range": [
+        0,
+        1
+      ],
+      "dim_range": [
+        512,
+        575
+      ]
+    },
+    "semantic_role": "tool-use",
+    "color": "#FF2D2D",
+    "radius": 0.95,
+    "trajectory": "arc_left",
+    "music_cue_ms": [
+      176000,
+      177800
+    ],
+    "caption": "Balloon 81: tool-use"
+  },
+  {
+    "balloon_id": 82,
+    "token_cluster": [
+      "build",
+      "deploy",
+      "workflow",
+      "runner",
+      "concept_82"
+    ],
+    "embedding_slice": {
+      "layer": 5,
+      "head_range": [
+        2,
+        3
+      ],
+      "dim_range": [
+        544,
+        607
+      ]
+    },
+    "semantic_role": "testing",
+    "color": "#FF2D2D",
+    "radius": 0.55,
+    "trajectory": "arc_right",
+    "music_cue_ms": [
+      178200,
+      180000
+    ],
+    "caption": "Balloon 82: testing"
+  },
+  {
+    "balloon_id": 83,
+    "token_cluster": [
+      "bug",
+      "trace",
+      "log",
+      "patch",
+      "concept_83"
+    ],
+    "embedding_slice": {
+      "layer": 6,
+      "head_range": [
+        4,
+        5
+      ],
+      "dim_range": [
+        576,
+        639
+      ]
+    },
+    "semantic_role": "debugging",
+    "color": "#FF2D2D",
+    "radius": 0.6,
+    "trajectory": "float",
+    "music_cue_ms": [
+      180400,
+      182200
+    ],
+    "caption": "Balloon 83: debugging"
+  },
+  {
+    "balloon_id": 84,
+    "token_cluster": [
+      "api",
+      "request",
+      "response",
+      "schema",
+      "concept_84"
+    ],
+    "embedding_slice": {
+      "layer": 7,
+      "head_range": [
+        6,
+        7
+      ],
+      "dim_range": [
+        608,
+        671
+      ]
+    },
+    "semantic_role": "refactoring",
+    "color": "#FF2D2D",
+    "radius": 0.65,
+    "trajectory": "zigzag",
+    "music_cue_ms": [
+      182600,
+      184400
+    ],
+    "caption": "Balloon 84: refactoring"
+  },
+  {
+    "balloon_id": 85,
+    "token_cluster": [
+      "prompt",
+      "instruction",
+      "context",
+      "tool",
+      "concept_85"
+    ],
+    "embedding_slice": {
+      "layer": 8,
+      "head_range": [
+        8,
+        9
+      ],
+      "dim_range": [
+        640,
+        703
+      ]
+    },
+    "semantic_role": "documentation",
+    "color": "#FF2D2D",
+    "radius": 0.7,
+    "trajectory": "pulse_ring",
+    "music_cue_ms": [
+      184800,
+      186600
+    ],
+    "caption": "Balloon 85: documentation"
+  },
+  {
+    "balloon_id": 86,
+    "token_cluster": [
+      "reward",
+      "policy",
+      "episode",
+      "environment",
+      "concept_86"
+    ],
+    "embedding_slice": {
+      "layer": 9,
+      "head_range": [
+        10,
+        11
+      ],
+      "dim_range": [
+        672,
+        735
+      ]
+    },
+    "semantic_role": "deployment",
+    "color": "#FF2D2D",
+    "radius": 0.75,
+    "trajectory": "orbit",
+    "music_cue_ms": [
+      187000,
+      188800
+    ],
+    "caption": "Balloon 86: deployment"
+  },
+  {
+    "balloon_id": 87,
+    "token_cluster": [
+      "latency",
+      "throughput",
+      "memory",
+      "gpu",
+      "concept_87"
+    ],
+    "embedding_slice": {
+      "layer": 10,
+      "head_range": [
+        12,
+        13
+      ],
+      "dim_range": [
+        704,
+        767
+      ]
+    },
+    "semantic_role": "monitoring",
+    "color": "#FF2D2D",
+    "radius": 0.8,
+    "trajectory": "rise_fade",
+    "music_cue_ms": [
+      189200,
+      191000
+    ],
+    "caption": "Balloon 87: monitoring"
+  },
+  {
+    "balloon_id": 88,
+    "token_cluster": [
+      "safety",
+      "validation",
+      "guardrail",
+      "review",
+      "concept_88"
+    ],
+    "embedding_slice": {
+      "layer": 11,
+      "head_range": [
+        14,
+        15
+      ],
+      "dim_range": [
+        736,
+        799
+      ]
+    },
+    "semantic_role": "security",
+    "color": "#FF2D2D",
+    "radius": 0.85,
+    "trajectory": "wave",
+    "music_cue_ms": [
+      191400,
+      193200
+    ],
+    "caption": "Balloon 88: security"
+  },
+  {
+    "balloon_id": 89,
+    "token_cluster": [
+      "agent",
+      "goal",
+      "state",
+      "action",
+      "concept_89"
+    ],
+    "embedding_slice": {
+      "layer": 12,
+      "head_range": [
+        0,
+        1
+      ],
+      "dim_range": [
+        768,
+        831
+      ]
+    },
+    "semantic_role": "planning",
+    "color": "#FF2D2D",
+    "radius": 0.9,
+    "trajectory": "spiral_up",
+    "music_cue_ms": [
+      193600,
+      195400
+    ],
+    "caption": "Balloon 89: planning"
+  },
+  {
+    "balloon_id": 90,
+    "token_cluster": [
+      "token",
+      "embedding",
+      "vector",
+      "attention",
+      "concept_90"
+    ],
+    "embedding_slice": {
+      "layer": 13,
+      "head_range": [
+        2,
+        3
+      ],
+      "dim_range": [
+        800,
+        863
+      ]
+    },
+    "semantic_role": "reasoning",
+    "color": "#FF2D2D",
+    "radius": 0.95,
+    "trajectory": "sine_drift",
+    "music_cue_ms": [
+      195800,
+      197600
+    ],
+    "caption": "Balloon 90: reasoning"
+  },
+  {
+    "balloon_id": 91,
+    "token_cluster": [
+      "function",
+      "class",
+      "module",
+      "import",
+      "concept_91"
+    ],
+    "embedding_slice": {
+      "layer": 14,
+      "head_range": [
+        4,
+        5
+      ],
+      "dim_range": [
+        832,
+        895
+      ]
+    },
+    "semantic_role": "state-tracking",
+    "color": "#FF2D2D",
+    "radius": 0.55,
+    "trajectory": "helix",
+    "music_cue_ms": [
+      198000,
+      199800
+    ],
+    "caption": "Balloon 91: state-tracking"
+  },
+  {
+    "balloon_id": 92,
+    "token_cluster": [
+      "test",
+      "assert",
+      "fixture",
+      "coverage",
+      "concept_92"
+    ],
+    "embedding_slice": {
+      "layer": 15,
+      "head_range": [
+        6,
+        7
+      ],
+      "dim_range": [
+        864,
+        927
+      ]
+    },
+    "semantic_role": "tool-use",
+    "color": "#FF2D2D",
+    "radius": 0.6,
+    "trajectory": "arc_left",
+    "music_cue_ms": [
+      200200,
+      202000
+    ],
+    "caption": "Balloon 92: tool-use"
+  },
+  {
+    "balloon_id": 93,
+    "token_cluster": [
+      "build",
+      "deploy",
+      "workflow",
+      "runner",
+      "concept_93"
+    ],
+    "embedding_slice": {
+      "layer": 16,
+      "head_range": [
+        8,
+        9
+      ],
+      "dim_range": [
+        896,
+        959
+      ]
+    },
+    "semantic_role": "testing",
+    "color": "#FF2D2D",
+    "radius": 0.65,
+    "trajectory": "arc_right",
+    "music_cue_ms": [
+      202400,
+      204200
+    ],
+    "caption": "Balloon 93: testing"
+  },
+  {
+    "balloon_id": 94,
+    "token_cluster": [
+      "bug",
+      "trace",
+      "log",
+      "patch",
+      "concept_94"
+    ],
+    "embedding_slice": {
+      "layer": 17,
+      "head_range": [
+        10,
+        11
+      ],
+      "dim_range": [
+        928,
+        991
+      ]
+    },
+    "semantic_role": "debugging",
+    "color": "#FF2D2D",
+    "radius": 0.7,
+    "trajectory": "float",
+    "music_cue_ms": [
+      204600,
+      206400
+    ],
+    "caption": "Balloon 94: debugging"
+  },
+  {
+    "balloon_id": 95,
+    "token_cluster": [
+      "api",
+      "request",
+      "response",
+      "schema",
+      "concept_95"
+    ],
+    "embedding_slice": {
+      "layer": 18,
+      "head_range": [
+        12,
+        13
+      ],
+      "dim_range": [
+        960,
+        1023
+      ]
+    },
+    "semantic_role": "refactoring",
+    "color": "#FF2D2D",
+    "radius": 0.75,
+    "trajectory": "zigzag",
+    "music_cue_ms": [
+      206800,
+      208600
+    ],
+    "caption": "Balloon 95: refactoring"
+  },
+  {
+    "balloon_id": 96,
+    "token_cluster": [
+      "prompt",
+      "instruction",
+      "context",
+      "tool",
+      "concept_96"
+    ],
+    "embedding_slice": {
+      "layer": 19,
+      "head_range": [
+        14,
+        15
+      ],
+      "dim_range": [
+        992,
+        1023
+      ]
+    },
+    "semantic_role": "documentation",
+    "color": "#FF2D2D",
+    "radius": 0.8,
+    "trajectory": "pulse_ring",
+    "music_cue_ms": [
+      209000,
+      210800
+    ],
+    "caption": "Balloon 96: documentation"
+  },
+  {
+    "balloon_id": 97,
+    "token_cluster": [
+      "reward",
+      "policy",
+      "episode",
+      "environment",
+      "concept_97"
+    ],
+    "embedding_slice": {
+      "layer": 20,
+      "head_range": [
+        0,
+        1
+      ],
+      "dim_range": [
+        0,
+        63
+      ]
+    },
+    "semantic_role": "deployment",
+    "color": "#FF2D2D",
+    "radius": 0.85,
+    "trajectory": "orbit",
+    "music_cue_ms": [
+      211200,
+      213000
+    ],
+    "caption": "Balloon 97: deployment"
+  },
+  {
+    "balloon_id": 98,
+    "token_cluster": [
+      "latency",
+      "throughput",
+      "memory",
+      "gpu",
+      "concept_98"
+    ],
+    "embedding_slice": {
+      "layer": 21,
+      "head_range": [
+        2,
+        3
+      ],
+      "dim_range": [
+        32,
+        95
+      ]
+    },
+    "semantic_role": "monitoring",
+    "color": "#FF2D2D",
+    "radius": 0.9,
+    "trajectory": "rise_fade",
+    "music_cue_ms": [
+      213400,
+      215200
+    ],
+    "caption": "Balloon 98: monitoring"
+  },
+  {
+    "balloon_id": 99,
+    "token_cluster": [
+      "safety",
+      "validation",
+      "guardrail",
+      "review",
+      "concept_99"
+    ],
+    "embedding_slice": {
+      "layer": 22,
+      "head_range": [
+        4,
+        5
+      ],
+      "dim_range": [
+        64,
+        127
+      ]
+    },
+    "semantic_role": "security",
+    "color": "#FF2D2D",
+    "radius": 0.95,
+    "trajectory": "wave",
+    "music_cue_ms": [
+      215600,
+      217400
+    ],
+    "caption": "Balloon 99: security"
+  }
+]

@@ -564,6 +564,12 @@ def collect_feedback(feedback: Feedback) -> dict[str, str]:
 
 # Main execution
 if __name__ == "__main__":
+    import os
     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    port = int(os.environ.get("PORT", 8080))
+    # In Cloud Run, PORT is set and we must listen on 0.0.0.0.
+    # In local dev, if PORT is not set, we default to 127.0.0.1 for security.
+    default_host = "0.0.0.0" if os.environ.get("PORT") else "127.0.0.1"
+    host = os.environ.get("HOST", default_host)
+    uvicorn.run(app, host=host, port=port)

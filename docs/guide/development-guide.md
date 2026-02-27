@@ -64,6 +64,8 @@ GEMINI.md      # AI assistant context file
 
 Your development loop will look like this:
 
+> Need a TypeScript Genkit generate→tool→self-review pattern? See [Genkit self-review flow pattern](./genkit-self-review-flow.md).
+
 **Python Projects**
 
 1. **Prototype:** Use notebooks in `notebooks/` for rapid experimentation
