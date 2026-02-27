@@ -21,7 +21,7 @@ from uuid import uuid4
 
 try:
     from croniter import croniter
-except Exception:  # pragma: no cover
+except ImportError:  # pragma: no cover
     croniter = None
 
 
