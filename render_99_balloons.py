@@ -80,8 +80,10 @@ def render_video(token_map: Path, output_mp4: Path, fps: int, width: int, height
                 x, y = _trajectory_xy(b["trajectory"], local_t, idx)
                 radius = 0.015 + b["radius"] * 0.007
                 pulse = 1.0 + 0.1 * math.sin(local_t * math.pi * 6)
-                c = np.array([1.0, 0.18, 0.18, 0.5 + 0.5 * local_t])
-                ax.add_patch(plt.Circle((x, y), radius * pulse, color=c, ec="#ff8080", lw=0.8))
+                color_hex = b.get("color", "#FF2D2D")
+                base_color = to_rgba(color_hex)
+                c = (*base_color[:3], 0.5 + 0.5 * local_t)
+                ax.add_patch(plt.Circle((x, y), radius * pulse, color=c, ec=color_hex, lw=0.8))
 
             ax.text(0.02, 0.96, "Token Embedding Map · 99 Balloons", color="white", fontsize=14)
             ax.text(0.02, 0.92, f"t={t_ms/1000:05.2f}s | active={len(active):02d}", color="#ffb3b3", fontsize=10)
