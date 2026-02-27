@@ -1,29 +1,48 @@
-from google.adk.apps.app import App
-from google.adk.apps.app import EventsCompactionConfig
-
-app = App(
-    name='my-agent',
-    root_agent=root_agent,
-    events_compaction_config=EventsCompactionConfig(
-        compaction_interval=3,  # Trigger compaction every 3 new invocations.
-        overlap_size=1          # Include last invocation from the previous window.
-    ),
-)
-from google.adk import Agent
-from google.adk.apps.app import App
-from google.adk.agents.context_cache_config import ContextCacheConfig
-
-root_agent = Agent(
-  # configure an agent using Gemini 2.0 or higher
-)
-
-# Create the app with context caching configuration
-app = App(
-    name='my-caching-agent-app',
-    root_agent=root_agent,
-    context_cache_config=ContextCacheConfig(
-        min_tokens=2048,    # Minimum tokens to trigger caching
-        ttl_seconds=600,    # Store for up to 10 minutes
-        cache_intervals=5,  # Refresh after 5 uses
-    ),
-)
+name: Node.js CI
+    
+    on:
+      push:
+        branches: [ main ]
+      pull_request:
+        branches: [ main ]
+    
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+    
+        strategy:
+          matrix:
+            node-version: [18.x, 20.x, 22.x]
+    
+        steps:
+        - uses: actions/checkout@v3name: Node.js CI
+    on:
+      push:
+        branches: [ main ]
+      pull_request:
+        branches: [ main ]
+    
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+    
+        strategy:
+          matrix:
+            node-version: [18.x, 20.x, 22.x]
+    
+        steps:
+        - uses: actions/checkout@v3
+        - name: Use Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v3
+          with:
+            node-version: ${{ matrix.node-version }}
+        - run: npm ci
+        - run: npm run build --if-present
+        - run: npm test
+        - name: Use Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v3
+          with:
+            node-version: ${{ matrix.node-version }}
+        - run: npm ci
+        - run: npm run build --if-present
+        - run: npm test

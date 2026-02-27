@@ -1,0 +1,24 @@
+description: "Industry Solutions Finder Agent"
+example_question: "What solutions do you have for Finance?"
+settings:
+  requires_data_ingestion: false
+  requires_session: true
+  deployment_targets: ["agent_engine", "cloud_run"]
+  extra_dependencies: ["google-adk>=1.15.0,<2.0.0"]
+  tags: ["adk", "industry", "solutions"]
+  frontend_type: "None"
+skill_triggers:
+  - "find relevant industry solutions"
+  - "discover google cloud solutions"
+skill_workflow:
+  - "Ask user for industry."
+  - "Lookup industry solutions using the provided data."
+  - "Provide key focus areas and details."
+skill_inputs:
+  - "Industry name (e.g., Finance, Healthcare)"
+skill_outputs:
+  - "Key Focus Areas and details for the industry"
+skill_constraints:
+  - "Must use the provided industry data."
+skill_references:
+  - "docs/guide/template-config-reference.md"
