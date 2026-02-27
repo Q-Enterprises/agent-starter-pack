@@ -166,7 +166,7 @@ fi
 ############################################
 # Toolchain binding
 ############################################
-GIT_VERSION="$(git --version | awk '{print $3}')"
+GIT_VERSION="$(git --version | sed -e 's/^git version //')"
 
 GH_VERSION=""
 GH_AUTH_USER=""
