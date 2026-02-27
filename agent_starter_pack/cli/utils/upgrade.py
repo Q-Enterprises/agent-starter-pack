@@ -448,10 +448,69 @@ def write_merged_dependencies(
         else:
             new_deps_section = "dependencies = []"
 
-        # Replace the dependencies array using regex
-        # Match: dependencies = [...] (potentially multiline)
-        pattern = r"dependencies\s*=\s*\[[^\]]*\]"
-        content = re.sub(pattern, new_deps_section, content, flags=re.DOTALL)
+        section_match = re.search(r"(?m)^\[project\]\s*$", content)
+        if not section_match:
+            return False
+
+        project_start = section_match.end()
+        next_section_match = re.search(r"(?m)^\[[^\]]+\]\s*$", content[project_start:])
+        project_end = (
+            project_start + next_section_match.start()
+            if next_section_match
+            else len(content)
+        )
+        project_content = content[project_start:project_end]
+
+        dep_match = re.search(r"(?m)^\s*dependencies\s*=", project_content)
+        if not dep_match:
+            return False
+
+        dep_start = project_start + dep_match.start()
+        dep_equals = project_start + dep_match.end()
+        list_start = content.find("[", dep_equals)
+
+        if list_start == -1 or list_start >= project_end:
+            return False
+
+        # Find the matching closing bracket while handling quoted strings,
+        # including dependency extras like package[extra].
+        in_string = False
+        quote_char = ""
+        escape = False
+        bracket_depth = 0
+        dep_end: int | None = None
+
+        for index in range(list_start, project_end):
+            char = content[index]
+            if in_string:
+                if quote_char == '"' and escape:
+                    escape = False
+                elif quote_char == '"' and char == "\\":
+                    escape = True
+                elif char == quote_char:
+                    in_string = False
+                    quote_char = ""
+                continue
+
+            if char in {'"', "'"}:
+                in_string = True
+                quote_char = char
+                continue
+
+            if char == "[":
+                bracket_depth += 1
+                continue
+
+            if char == "]":
+                bracket_depth -= 1
+                if bracket_depth == 0:
+                    dep_end = index + 1
+                    break
+
+        if dep_end is None:
+            return False
+
+        content = content[:dep_start] + new_deps_section + content[dep_end:]
 
         pyproject_path.write_text(content, encoding="utf-8")
         return True

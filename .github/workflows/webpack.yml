@@ -1,15 +1,40 @@
+name: Frontend Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "agent_starter_pack/frontends/adk_live_react/frontend/**"
+      - ".github/workflows/webpack.yml"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "agent_starter_pack/frontends/adk_live_react/frontend/**"
+      - ".github/workflows/webpack.yml"
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js
+
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
-      - name: Install and Build
-        # Set the context to the actual project folder
-        working-directory: ./qube-forensic-console/console 
-        run: |
-          npm install
-          npm run build
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+          cache-dependency-path: agent_starter_pack/frontends/adk_live_react/frontend/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ./agent_starter_pack/frontends/adk_live_react/frontend
+        run: npm ci
+
+      - name: Build
+        working-directory: ./agent_starter_pack/frontends/adk_live_react/frontend
+        run: npm run build
