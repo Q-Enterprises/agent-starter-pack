@@ -326,7 +326,7 @@ class TemplateConfig:
             if not isinstance(data, dict):
                 raise ValueError(f"Invalid template config format in {config_path}")
 
-            required_fields = ["name", "description", "settings"]
+            required_fields = ["description", "settings"]
             missing_fields = [f for f in required_fields if f not in data]
             if missing_fields:
                 raise ValueError(
@@ -340,7 +340,7 @@ class TemplateConfig:
             )
 
             return cls(
-                name=data["name"],
+                name=data.get("name", config_path.parent.parent.name),
                 description=data["description"],
                 settings=data["settings"],
                 skill_triggers=data.get("skill_triggers"),
@@ -419,14 +419,6 @@ def _validate_skill_metadata(
             )
 
 
-def _get_skill_metadata_list(config: dict[str, Any], field: str) -> list[str]:
-    """Return a sanitized list value for a skill metadata field."""
-    value = config.get(field)
-    if not isinstance(value, list):
-        return []
-    return [item for item in value if isinstance(item, str)]
-
-
 def get_available_agents(deployment_target: str | None = None) -> dict:
     """Dynamically load available agents from the agents directory.
 
@@ -494,24 +486,12 @@ def get_available_agents(deployment_target: str | None = None) -> dict:
                         "description": description,
                         "language": language,
                         "framework": framework,
-                        "skill_triggers": _get_skill_metadata_list(
-                            config, "skill_triggers"
-                        ),
-                        "skill_workflow": _get_skill_metadata_list(
-                            config, "skill_workflow"
-                        ),
-                        "skill_inputs": _get_skill_metadata_list(
-                            config, "skill_inputs"
-                        ),
-                        "skill_outputs": _get_skill_metadata_list(
-                            config, "skill_outputs"
-                        ),
-                        "skill_constraints": _get_skill_metadata_list(
-                            config, "skill_constraints"
-                        ),
-                        "skill_references": _get_skill_metadata_list(
-                            config, "skill_references"
-                        ),
+                        "skill_triggers": config.get("skill_triggers", []),
+                        "skill_workflow": config.get("skill_workflow", []),
+                        "skill_inputs": config.get("skill_inputs", []),
+                        "skill_outputs": config.get("skill_outputs", []),
+                        "skill_constraints": config.get("skill_constraints", []),
+                        "skill_references": config.get("skill_references", []),
                         "priority": priority,
                     }
                     agents_list.append(agent_info)
@@ -555,12 +535,6 @@ def load_template_config(template_dir: pathlib.Path) -> dict[str, Any]:
                     strict=True,
                 )
             return loaded_config
-    except ValueError as err:
-        logging.error("Template config validation failed for %s: %s", config_file, err)
-        return {}
-    except yaml.YAMLError as err:
-        logging.error("Template config YAML parsing failed for %s: %s", config_file, err)
-        return {}
     except Exception as e:
         logging.error("Error loading template config %s: %s", config_file, e)
         return {}
@@ -1746,6 +1720,7 @@ def process_template(
             # Apply conditional file logic (Windows-compatible replacement for Jinja2 filenames)
             conditional_config = {
                 "agent_name": agent_name,
+                "deployment_target": deployment_target,
                 "cicd_runner": cicd_runner or "google_cloud_build",
                 "is_adk": "adk" in tags,
                 "is_adk_live": "adk_live" in tags,
