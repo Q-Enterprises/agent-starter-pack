@@ -53,7 +53,7 @@ def upload_video(args: argparse.Namespace) -> str:
         "status": {"privacyStatus": args.privacy_status},
     }
 
-    media = MediaFileUpload(str(args.video), chunksize=-1, resumable=True, mimetype="video/mp4")
+    media = MediaFileUpload(str(args.video), chunksize=1024*1024, resumable=True, mimetype="video/mp4")
     req = youtube.videos().insert(part="snippet,status", body=body, media_body=media)
 
     response = None
