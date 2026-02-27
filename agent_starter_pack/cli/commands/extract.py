@@ -90,6 +90,11 @@ CORE_DEPENDENCIES = {
     "langgraph",
 }
 
+# Pre-compiled regex and normalized sets for performance
+DEP_NAME_REGEX = re.compile(r"[\s\[><~=]")
+SCAFFOLDING_DEPENDENCIES_LOWER = {d.lower() for d in SCAFFOLDING_DEPENDENCIES}
+CORE_DEPENDENCIES_LOWER = {d.lower() for d in CORE_DEPENDENCIES}
+
 
 def copy_project_files(
     source_dir: pathlib.Path,
@@ -231,8 +236,8 @@ def is_scaffolding_dependency(dep: str) -> bool:
         True if this is a scaffolding dependency
     """
     # Extract base package name (before version specifiers or extras)
-    dep_name = re.split(r"[\s\[><~=]", dep)[0].strip()
-    return dep_name.lower() in {d.lower() for d in SCAFFOLDING_DEPENDENCIES}
+    dep_name = DEP_NAME_REGEX.split(dep)[0].strip()
+    return dep_name.lower() in SCAFFOLDING_DEPENDENCIES_LOWER
 
 
 def is_core_dependency(dep: str) -> bool:
@@ -245,9 +250,8 @@ def is_core_dependency(dep: str) -> bool:
         True if this is a core dependency that must be kept
     """
     # Extract base package name (before version specifiers or extras)
-    dep_name = re.split(r"[\s\[><~=]", dep)[0].strip().lower()
-    for core in CORE_DEPENDENCIES:
-        core_lower = core.lower()
+    dep_name = DEP_NAME_REGEX.split(dep)[0].strip().lower()
+    for core_lower in CORE_DEPENDENCIES_LOWER:
         # Exact match or extension package (e.g., langchain-google-genai for langchain)
         if dep_name == core_lower or dep_name.startswith(core_lower + "-"):
             return True
