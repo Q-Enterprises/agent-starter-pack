@@ -477,8 +477,8 @@ if __name__ == "__main__":
             # Format: projects/PROJECT_ID/locations/LOCATION/reasoningEngines/ENGINE_ID
             import re
 
-            match = re.match(
-                r"projects/([^/]+)/locations/([^/]+)/reasoningEngines/",
+            match = re.fullmatch(
+                r"projects/([^/]+)/locations/([^/]+)/reasoningEngines/([^/]+)",
                 config["remote_agent_engine_id"],
             )
             if match:
