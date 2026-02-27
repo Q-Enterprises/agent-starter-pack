@@ -536,7 +536,7 @@ def load_template_config(template_dir: pathlib.Path) -> dict[str, Any]:
                 )
             return loaded_config
     except Exception as e:
-        logging.error(f"Error loading template config: {e}")
+        logging.error("Error loading template config %s: %s", config_file, e)
         return {}
 
 
