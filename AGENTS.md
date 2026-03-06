@@ -51,7 +51,7 @@ Use these commands from the repository root:
 - Avoid introducing dependencies that require network-time code execution without clear justification.
 
 ## Commit and pull request guidelines
-- Use clear, imperative commit messages (e.g., `Add root AGENTS.md with contributor guidance`).
+- Use clear, imperative commit messages following the Conventional Commits format (e.g., `docs: Add root AGENTS.md with contributor guidance`).
 - Keep commits focused on one logical change.
 - PR descriptions should include:
   - What changed.
