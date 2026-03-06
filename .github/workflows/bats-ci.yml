@@ -1,0 +1,30 @@
+name: Bash (BATS) CI
+
+on:
+  push:
+    branches: [ main, constitutional-autogen-workflows ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  bats:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install BATS
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y bats
+
+      - name: Run BATS tests
+        shell: bash
+        run: |
+          if [ -d tests ]; then
+            bats -r tests
+          else
+            echo "No tests/ directory; skipping."
+          fi

@@ -22,8 +22,6 @@ from typing import Any, Dict, List, Optional
 
 try:
     from croniter import croniter
-try:
-    from croniter import croniter
 except ImportError:  # pragma: no cover - optional dependency fallback
     croniter = None
 

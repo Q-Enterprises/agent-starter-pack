@@ -32,23 +32,25 @@ class KineticResolver:
     ) -> dict:
         decision = "HALT"
         selected_expert: ExpertFn | None = None
-        energy_cost: float | None = None
+        selected_energy_cost: float | None = None
 
         for expert_id, execute_fn in self.experts.items():
             projected_state = self._simulate_outcome(expert_id, current_state)
             energy_cost = self._calculate_lyapunov_drift(current_state, projected_state)
 
-            if energy_cost <= task.energy_budget:
+            if energy_cost <= task.energy_budget and (
+                selected_energy_cost is None or energy_cost < selected_energy_cost
+            ):
                 decision = "EXECUTE"
                 selected_expert = execute_fn
-                break
+                selected_energy_cost = energy_cost
 
         if decision == "EXECUTE" and selected_expert:
             result = selected_expert(task)
-            self.ledger.record(task, "SUCCESS", energy_cost)
+            self.ledger.record(task, "SUCCESS", selected_energy_cost)
             return result
 
-        self.ledger.record(task, "BLOCKED", energy_cost)
+        self.ledger.record(task, "BLOCKED", selected_energy_cost)
         raise RuntimeError(
             "Invariant violation: no expert met energy budget "
             f"{task.energy_budget}"

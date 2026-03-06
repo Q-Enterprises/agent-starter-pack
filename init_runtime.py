@@ -38,7 +38,16 @@ class KineticTaskRouter:
         dot_product = np.dot(current_state, proposed_state)
         norm_a = np.linalg.norm(current_state)
         norm_b = np.linalg.norm(proposed_state)
-        return 1 - (dot_product / (norm_a * norm_b))
+
+        # Avoid division by zero (or subnormal underflow) when either vector is
+        # effectively zero-length. Return a conservative fallback drift so that
+        # unstable comparisons do not influence routing decisions.
+        if norm_a <= np.finfo(float).tiny or norm_b <= np.finfo(float).tiny:
+            return 1.0
+
+        cosine = dot_product / (norm_a * norm_b)
+        cosine = np.clip(cosine, -1.0, 1.0)
+        return float(1 - cosine)
 
     def resolve_and_execute(
         self, task: TaskOntology, current_vector: np.ndarray
