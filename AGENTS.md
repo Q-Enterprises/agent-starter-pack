@@ -16,7 +16,7 @@ Use these commands from the repository root:
 - Run full test suite:
   - `make test`
 - Run templated agent integration tests:
-  - `make test-templated-agents`
+  - `make test-templated-agents` (Note: requires `_TEST_AGENT_COMBINATION` env var to select a test combination)
 - Run E2E deployment tests (requires configured env in `tests/cicd/.env`):
   - `make test-e2e`
 - Run linting/type checks:
