@@ -22,7 +22,7 @@ Use these commands from the repository root:
 - Run linting/type checks:
   - `make lint`
 - Validate templated agent linting:
-  - `make lint-templated-agents`
+  - `make lint-templated-agents` (Note: requires `_TEST_AGENT_COMBINATION` env var to select a lint combination)
 
 ## Code style guidelines
 - Follow formatting and linting rules configured in `pyproject.toml`.
